@@ -2,25 +2,9 @@ import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import axios from 'axios'
+
 
 function App() {
-
-  const handleButton = async () => {
-    await axios.get("http://api.weatherapi.com/v1/current.json", {
-      params: {
-        key: "2d6e362847bb4b82b65220712231111",
-        q: "Paris"
-      }
-    })
-      .then(res => {
-        console.log(res.data);
-      })
-      .catch(err => {
-        console.log(err);
-      })
-  }
-
 
   const [day, setDay] = useState("");
   const [formattedTime, setFormattedTime] = useState("")
@@ -118,7 +102,7 @@ function App() {
             <p>{d} {month} {year}</p>
           </div>
 
-          <button onClick={handleButton}>click me!!</button>
+    
         </div>
       </div>
     </>
